@@ -1,0 +1,7 @@
+baseURL = 'https://nshkr-space.github.io/site/'
+languageCode = 'en-us'
+title = 'North Shore Hackerspace'
+
+[taxonomies]
+  tag = ""
+  category = ""

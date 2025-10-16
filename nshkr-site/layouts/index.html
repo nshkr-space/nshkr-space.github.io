@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                {{ partial "logo.html" . }}
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>North Shore Hackerspace</h1>
+                <p class="tagline">Where technology meets the waves</p>
+                <div class="wave-divider">
+                    {{ partial "wave.html" . }}
+                </div>
+            </section>
+
+            <section class="about">
+                <div class="content-grid">
+                    <div class="card">
+                        <div class="icon">{{ partial "code-icon.html" . }}</div>
+                        <h3>Create</h3>
+                        <p>Build, hack, and innovate with like-minded creators on Oahu's North Shore.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">{{ partial "circuit-icon.html" . }}</div>
+                        <h3>Connect</h3>
+                        <p>Join a community of makers, developers, and tech enthusiasts in paradise.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">{{ partial "surf-icon.html" . }}</div>
+                        <h3>Balance</h3>
+                        <p>Where coding sessions and surf breaks come together in perfect harmony.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact">
+                <h2>Get in Touch</h2>
+                <p>Ready to join the community?</p>
+                <a href="mailto:hello@nshkr.space" class="contact-button">
+                    <span>hello@nshkr.space</span>
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-wave">
+                {{ partial "footer-wave.html" . }}
+            </div>
+            <p>&copy; {{ now.Year }} North Shore Hackerspace</p>
+        </footer>
+    </div>
+</body>
+</html>
