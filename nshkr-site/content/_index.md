@@ -7,13 +7,12 @@ Oahu — a dedicated room in Waialua, just down the road from Haleiwa Town. We
 opened in March 2023 on a simple idea: the people building things out here
 deserve a place to build them together.
 
-It is not a big operation. It is a real one. Bring your project, your soldering
-habit, your half-finished firmware, your radio gear. Find a bench, find some
-quiet, find someone to think out loud with.
+One room, a real bench, and the door open. Bring your project, your soldering
+habit, your half-finished firmware, your radio gear. Find some quiet, find some
+space, find someone to think out loud with.
 
-The hours are island hours, and that is deliberate. Get deep into something
-hard in the morning, break for lunch, and still make the water before the light
-goes. The work is better for it.
+The hours run 9 to 6, which leaves the morning for the hard part and the
+evening for the water. Plenty of good work has been done on that schedule.
 
 Everyone is welcome — visitors passing through and ohana who call the North
 Shore home. Day, weekly, and monthly passes are all available, and all priced

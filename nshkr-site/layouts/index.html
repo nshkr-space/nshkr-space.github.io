@@ -23,14 +23,13 @@
       <a href="#visit">Visit</a>
       <a href="#passes">Passes</a>
       <a href="#gear">Gear</a>
-      <a class="btn btn--sm" href="mailto:{{ $p.emailPrimary }}">Get in touch</a>
+      <a class="btn btn--sm" href="mailto:{{ $p.email }}">Get in touch</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- ───────────────────────── Hero ───────────────────────── -->
   <section class="hero">
     <div class="wrap hero__inner">
       <p class="pill" data-reveal>
@@ -50,7 +49,7 @@
       </p>
 
       <div class="hero__cta" data-reveal>
-        <a class="btn" href="mailto:{{ $p.emailPrimary }}">Email us</a>
+        <a class="btn" href="mailto:{{ $p.email }}">Email us</a>
         <a class="btn btn--ghost" href="#passes">See passes</a>
       </div>
 
@@ -58,7 +57,6 @@
     </div>
   </section>
 
-  <!-- ───────────────────────── Facts ───────────────────────── -->
   <section class="facts">
     <div class="wrap">
       <dl class="facts__grid">
@@ -80,13 +78,12 @@
         <div class="fact" data-reveal>
           <dt>{{ partial "icon.html" "ruler" }} The room</dt>
           <dd>{{ $p.roomSize }}</dd>
-          <p>Dedicated, not shared</p>
+          <p>A room of our own</p>
         </div>
       </dl>
     </div>
   </section>
 
-  <!-- ───────────────────────── About ───────────────────────── -->
   <section class="about" id="about">
     <div class="wrap about__inner">
       <div class="about__copy" data-reveal>
@@ -107,7 +104,6 @@
     </div>
   </section>
 
-  <!-- ───────────────────────── Values ───────────────────────── -->
   <section class="values">
     <div class="wrap">
       <div class="cards">
@@ -122,7 +118,6 @@
     </div>
   </section>
 
-  <!-- ───────────────────────── Visit ───────────────────────── -->
   <section class="visit" id="visit">
     <div class="wrap visit__inner">
       <div data-reveal>
@@ -160,7 +155,6 @@
     </div>
   </section>
 
-  <!-- ───────────────────────── Passes ───────────────────────── -->
   <section class="passes" id="passes">
     <div class="wrap">
       <div class="sechead" data-reveal>
@@ -184,12 +178,11 @@
 
       <p class="passes__foot" data-reveal>
         Ohana rates are for North Shore locals and returning friends.
-        Not sure which fits? <a href="mailto:{{ $p.emailPrimary }}">Just ask.</a>
+        Not sure which fits? <a href="mailto:{{ $p.email }}">Just ask.</a>
       </p>
     </div>
   </section>
 
-  <!-- ───────────────────────── Gear ───────────────────────── -->
   <section class="gear" id="gear">
     <div class="wrap">
       <div class="sechead" data-reveal>
@@ -210,7 +203,6 @@
     </div>
   </section>
 
-  <!-- ───────────────────────── Contact ───────────────────────── -->
   <section class="contact" id="contact">
     <div class="wrap contact__inner" data-reveal>
       <h2 class="h2">Come build something</h2>
@@ -219,12 +211,13 @@
         We answer every email.
       </p>
       <div class="contact__btns">
-        <a class="btn" href="mailto:{{ $p.emailPrimary }}">
-          {{ partial "icon.html" "mail" }} {{ $p.emailPrimary }}
+        {{ "<!--email_off-->" | safeHTML }}
+        <a class="btn" href="mailto:{{ $p.email }}">
+          {{ partial "icon.html" "mail" }} {{ $p.email }}
         </a>
-        <a class="btn btn--ghost" href="mailto:{{ $p.emailAlt }}">{{ $p.emailAlt }}</a>
+        {{ "<!--/email_off-->" | safeHTML }}
       </div>
-      <p class="aloha">Aloha.</p>
+      <p class="aloha">Aloha</p>
     </div>
   </section>
 
@@ -241,8 +234,9 @@
       </div>
     </div>
     <nav class="foot__links" aria-label="Footer">
-      <a href="mailto:{{ $p.emailPrimary }}">{{ $p.emailPrimary }}</a>
-      <a href="mailto:{{ $p.emailAlt }}">{{ $p.emailAlt }}</a>
+      {{ "<!--email_off-->" | safeHTML }}
+      <a href="mailto:{{ $p.email }}">{{ $p.email }}</a>
+      {{ "<!--/email_off-->" | safeHTML }}
       <a href="{{ $p.wiki }}" target="_blank" rel="noopener">Hackerspaces Wiki</a>
     </nav>
   </div>

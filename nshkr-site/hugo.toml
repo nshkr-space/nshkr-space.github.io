@@ -21,8 +21,7 @@ enableRobotsTXT = true
   country      = 'United States of America'
   latitude     = '21.573167'
   longitude    = '-158.122837'
-  emailPrimary = 'Hello@NSHkr.com'
-  emailAlt     = 'Hello@NSHkr.Space'
+  email        = 'Hello@NSHkr.Space'
   wiki         = 'https://wiki.hackerspaces.org/NSHkr'
 
 [params.hours]
@@ -45,17 +44,17 @@ enableRobotsTXT = true
   name     = 'One Day a Week'
   price    = '$60'
   unit     = '/ month'
-  note     = 'Same day each week'
-  detail   = 'Pick your day and make it a habit. Good for a standing project night.'
-  featured = true
+  note     = 'One day a week'
+  detail   = 'One day a week, every week. Good for a standing project session.'
+  featured = false
 
 [[params.passes]]
   name     = 'Monthly'
-  price    = '$300'
+  price    = '$220'
   unit     = '/ month'
-  note     = 'Full access'
-  detail   = '$220 / month on a two-month minimum. The best rate for sustained work.'
-  featured = false
+  note     = 'Two-month minimum'
+  detail   = 'The best rate for sustained work. A single month with no commitment is $300.'
+  featured = true
 
 [[params.equipment]]
   name = 'Soldering Iron'
@@ -80,7 +79,14 @@ enableRobotsTXT = true
 [[params.values]]
   title = 'Balance'
   icon  = 'surf'
-  body  = 'Island hours by design. Get deep into something hard in the morning and still make the water before the light goes. That is not a perk, it is the whole idea.'
+  body  = 'Island hours, kept on purpose. Get deep into something hard in the morning and still make the water before the light goes.'
 
 [markup.goldmark.renderer]
   unsafe = true
+
+# Cloudflare proxies this domain and rewrites mailto links into its
+# "[email protected]" placeholder, which only decodes if its script runs.
+# The <!--email_off--> directive opts out, so comments must survive minifying.
+[minify]
+  [minify.tdewolff.html]
+    keepComments = true
