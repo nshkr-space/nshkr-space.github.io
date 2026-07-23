@@ -23,7 +23,7 @@
       <a href="#visit">Visit</a>
       <a href="#passes">Passes</a>
       <a href="#gear">Gear</a>
-      <a class="btn btn--sm" href="mailto:{{ $p.email }}">Get in touch</a>
+      {{ "<!--email_off-->" | safeHTML }}<a class="btn btn--sm" href="mailto:{{ $p.email }}">Get in touch</a>{{ "<!--/email_off-->" | safeHTML }}
     </nav>
   </div>
 </header>
@@ -49,7 +49,7 @@
       </p>
 
       <div class="hero__cta" data-reveal>
-        <a class="btn" href="mailto:{{ $p.email }}">Email us</a>
+        {{ "<!--email_off-->" | safeHTML }}<a class="btn" href="mailto:{{ $p.email }}">Email us</a>{{ "<!--/email_off-->" | safeHTML }}
         <a class="btn btn--ghost" href="#passes">See passes</a>
       </div>
 
@@ -178,7 +178,7 @@
 
       <p class="passes__foot" data-reveal>
         Ohana rates are for North Shore locals and returning friends.
-        Not sure which fits? <a href="mailto:{{ $p.email }}">Just ask.</a>
+        Not sure which fits? {{ "<!--email_off-->" | safeHTML }}<a href="mailto:{{ $p.email }}">Just ask.</a>{{ "<!--/email_off-->" | safeHTML }}
       </p>
     </div>
   </section>
