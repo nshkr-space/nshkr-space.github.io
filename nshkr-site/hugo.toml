@@ -33,28 +33,19 @@ enableRobotsTXT = true
   note     = 'Outside these hours by arrangement — just email us.'
 
 [[params.passes]]
-  name     = 'Daily'
-  price    = '$30'
-  unit     = '/ day'
-  note     = 'Visitor rate'
-  detail   = '$20 / day for Ohana — North Shore locals and returning friends.'
-  featured = false
+  name   = 'Daily'
+  note   = 'Drop in for the day'
+  detail = 'For visitors passing through. Ohana rates for North Shore locals and returning friends.'
 
 [[params.passes]]
-  name     = 'Monthly'
-  price    = '$220'
-  unit     = '/ month'
-  note     = 'Two-month minimum'
-  detail   = 'The best rate for sustained work. A single month with no commitment is $300.'
-  featured = true
+  name   = 'Monthly'
+  note   = 'For sustained work'
+  detail = 'The best fit for a project you are living with. Two-month minimum, or a single month with no commitment.'
 
 [[params.passes]]
-  name     = 'One Day a Week'
-  price    = '$60'
-  unit     = '/ month'
-  note     = 'One day a week'
-  detail   = 'One day a week, every week. Good for a standing project session.'
-  featured = false
+  name   = 'One Day a Week'
+  note   = 'A standing session'
+  detail = 'One day a week, every week. Good for a standing project session.'
 
 [[params.equipment]]
   name = 'Soldering Iron'

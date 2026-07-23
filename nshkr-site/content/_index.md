@@ -15,5 +15,5 @@ The hours run 9 to 6, which leaves the morning for the hard part and the
 evening for the water. Plenty of good work has been done on that schedule.
 
 Everyone is welcome — visitors passing through and ohana who call the North
-Shore home. Day, weekly, and monthly passes are all available, and all priced
-to be reachable.
+Shore home. Day, weekly, and monthly passes are all available — email us and we
+will tell you what fits.

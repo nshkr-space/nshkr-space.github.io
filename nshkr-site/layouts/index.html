@@ -159,17 +159,13 @@
     <div class="wrap">
       <div class="sechead" data-reveal>
         <h2 class="h2">Passes</h2>
-        <p class="lede">Day, weekly, and monthly — all priced to be reachable.</p>
+        <p class="lede">Three ways to use the room — by the day, by the month, or one day a week.</p>
       </div>
 
       <div class="plans">
         {{- range $p.passes }}
-        <article class="plan{{ if .featured }} plan--featured{{ end }}" data-reveal>
-          {{- if .featured }}<span class="plan__tag">Most popular</span>{{ end }}
+        <article class="plan" data-reveal>
           <h3>{{ .name }}</h3>
-          <p class="plan__price">
-            <b>{{ .price }}</b><span>{{ .unit }}</span>
-          </p>
           <p class="plan__note">{{ .note }}</p>
           <p class="plan__detail">{{ .detail }}</p>
         </article>
@@ -177,8 +173,9 @@
       </div>
 
       <p class="passes__foot" data-reveal>
-        Ohana rates are for North Shore locals and returning friends.
-        Not sure which fits? {{ "<!--email_off-->" | safeHTML }}<a href="mailto:{{ $p.email }}">Just ask.</a>{{ "<!--/email_off-->" | safeHTML }}
+        Rates are kept reachable, with Ohana rates for North Shore locals and
+        returning friends. Want the current rates, or not sure which fits?
+        {{ "<!--email_off-->" | safeHTML }}<a href="mailto:{{ $p.email }}">Just ask.</a>{{ "<!--/email_off-->" | safeHTML }}
       </p>
     </div>
   </section>
