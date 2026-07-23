@@ -41,20 +41,20 @@ enableRobotsTXT = true
   featured = false
 
 [[params.passes]]
-  name     = 'One Day a Week'
-  price    = '$60'
-  unit     = '/ month'
-  note     = 'One day a week'
-  detail   = 'One day a week, every week. Good for a standing project session.'
-  featured = false
-
-[[params.passes]]
   name     = 'Monthly'
   price    = '$220'
   unit     = '/ month'
   note     = 'Two-month minimum'
   detail   = 'The best rate for sustained work. A single month with no commitment is $300.'
   featured = true
+
+[[params.passes]]
+  name     = 'One Day a Week'
+  price    = '$60'
+  unit     = '/ month'
+  note     = 'One day a week'
+  detail   = 'One day a week, every week. Good for a standing project session.'
+  featured = false
 
 [[params.equipment]]
   name = 'Soldering Iron'
