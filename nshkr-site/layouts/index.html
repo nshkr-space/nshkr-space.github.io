@@ -1,63 +1,254 @@
+{{- $p := .Site.Params -}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Site.Title }}</title>
-    <link rel="stylesheet" href="/css/style.css">
+{{ partial "head.html" . }}
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo-container">
-                {{ partial "logo.html" . }}
-            </div>
-        </header>
+<a class="skip" href="#main">Skip to content</a>
 
-        <main>
-            <section class="hero">
-                <h1>North Shore Hackerspace</h1>
-                <p class="tagline">Where technology meets the waves</p>
-                <div class="wave-divider">
-                    {{ partial "wave.html" . }}
-                </div>
-            </section>
+<div class="aurora" aria-hidden="true"></div>
 
-            <section class="about">
-                <div class="content-grid">
-                    <div class="card">
-                        <div class="icon">{{ partial "code-icon.html" . }}</div>
-                        <h3>Create</h3>
-                        <p>Build, hack, and innovate with like-minded creators on Oahu's North Shore.</p>
-                    </div>
-                    <div class="card">
-                        <div class="icon">{{ partial "circuit-icon.html" . }}</div>
-                        <h3>Connect</h3>
-                        <p>Join a community of makers, developers, and tech enthusiasts in paradise.</p>
-                    </div>
-                    <div class="card">
-                        <div class="icon">{{ partial "surf-icon.html" . }}</div>
-                        <h3>Balance</h3>
-                        <p>Where coding sessions and surf breaks come together in perfect harmony.</p>
-                    </div>
-                </div>
-            </section>
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="/">
+      <span class="brand__mark">{{ partial "logo.html" . }}</span>
+      <span class="brand__text">
+        <b>NSHkr</b>
+        <em>North Shore Hackerspace</em>
+      </span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#visit">Visit</a>
+      <a href="#passes">Passes</a>
+      <a href="#gear">Gear</a>
+      <a class="btn btn--sm" href="mailto:{{ $p.emailPrimary }}">Get in touch</a>
+    </nav>
+  </div>
+</header>
 
-            <section class="contact">
-                <h2>Get in Touch</h2>
-                <p>Ready to join the community?</p>
-                <a href="mailto:hello@nshkr.space" class="contact-button">
-                    <span>hello@nshkr.space</span>
-                </a>
-            </section>
-        </main>
+<main id="main">
 
-        <footer>
-            <div class="footer-wave">
-                {{ partial "footer-wave.html" . }}
-            </div>
-            <p>&copy; {{ now.Year }} North Shore Hackerspace</p>
-        </footer>
+  <!-- ───────────────────────── Hero ───────────────────────── -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <p class="pill" data-reveal>
+        <span class="pill__dot"></span>
+        {{ $p.status }} · {{ $p.city }}, {{ $p.region }}
+      </p>
+
+      <h1 class="hero__title" data-reveal>
+        North Shore<br><span class="grad">Hackerspace</span>
+      </h1>
+
+      <p class="hero__tagline" data-reveal>{{ $p.tagline }}</p>
+
+      <p class="hero__lede" data-reveal>
+        A dedicated room in {{ $p.city }}, just down the road from {{ $p.nearby }}.
+        Open {{ lower $p.hours.days }}, {{ $p.hours.open }} to {{ $p.hours.close }}.
+      </p>
+
+      <div class="hero__cta" data-reveal>
+        <a class="btn" href="mailto:{{ $p.emailPrimary }}">Email us</a>
+        <a class="btn btn--ghost" href="#passes">See passes</a>
+      </div>
+
+      <div class="hero__wave" aria-hidden="true">{{ partial "swell.html" . }}</div>
     </div>
+  </section>
+
+  <!-- ───────────────────────── Facts ───────────────────────── -->
+  <section class="facts">
+    <div class="wrap">
+      <dl class="facts__grid">
+        <div class="fact" data-reveal>
+          <dt>{{ partial "icon.html" "clock" }} Hours</dt>
+          <dd>{{ $p.hours.open }} – {{ $p.hours.close }}</dd>
+          <p>{{ $p.hours.days }}</p>
+        </div>
+        <div class="fact" data-reveal>
+          <dt>{{ partial "icon.html" "pin" }} Where</dt>
+          <dd>{{ $p.city }}</dd>
+          <p>Next to {{ $p.nearby }}</p>
+        </div>
+        <div class="fact" data-reveal>
+          <dt>{{ partial "icon.html" "calendar" }} Since</dt>
+          <dd>2023</dd>
+          <p>{{ $p.founded }}</p>
+        </div>
+        <div class="fact" data-reveal>
+          <dt>{{ partial "icon.html" "ruler" }} The room</dt>
+          <dd>{{ $p.roomSize }}</dd>
+          <p>Dedicated, not shared</p>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── About ───────────────────────── -->
+  <section class="about" id="about">
+    <div class="wrap about__inner">
+      <div class="about__copy" data-reveal>
+        <h2 class="h2">Aloha, and welcome</h2>
+        <div class="prose">{{ .Content }}</div>
+      </div>
+      <aside class="about__aside" data-reveal>
+        <div class="quote">
+          <p>Finally, a genuine Haleiwa-based hackerspace.</p>
+        </div>
+        <ul class="meta">
+          <li><span>Status</span><b>{{ $p.status }}</b></li>
+          <li><span>Members</span><b>{{ $p.members }} and counting</b></li>
+          <li><span>Founded</span><b>{{ $p.founded }}</b></li>
+          <li><span>Region</span><b>{{ $p.region }}, {{ $p.country }}</b></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Values ───────────────────────── -->
+  <section class="values">
+    <div class="wrap">
+      <div class="cards">
+        {{- range $p.values }}
+        <article class="card" data-reveal>
+          <span class="card__icon">{{ partial "icon.html" .icon }}</span>
+          <h3>{{ .title }}</h3>
+          <p>{{ .body }}</p>
+        </article>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Visit ───────────────────────── -->
+  <section class="visit" id="visit">
+    <div class="wrap visit__inner">
+      <div data-reveal>
+        <h2 class="h2">Come by</h2>
+        <p class="lede">
+          We are in a dedicated room in {{ $p.city }}, Hawaii — the next town over
+          from {{ $p.nearby }}. Doors are open {{ lower $p.hours.days }} from
+          {{ $p.hours.open }} to {{ $p.hours.close }}.
+        </p>
+        <p class="note">{{ $p.hours.note }}</p>
+        <a class="btn btn--ghost"
+           href="https://www.openstreetmap.org/?mlat={{ $p.latitude }}&mlon={{ $p.longitude }}#map=14/{{ $p.latitude }}/{{ $p.longitude }}"
+           target="_blank" rel="noopener">
+          View on the map
+        </a>
+      </div>
+
+      <div class="hourscard" data-reveal>
+        <div class="hourscard__top">
+          {{ partial "icon.html" "clock" }}
+          <span>Open {{ lower $p.hours.days }}</span>
+        </div>
+        <div class="hourscard__time">
+          <b>{{ $p.hours.open }}</b>
+          <i>to</i>
+          <b>{{ $p.hours.close }}</b>
+        </div>
+        <ul class="hourscard__list">
+          <li><span>Location</span><b>{{ $p.city }}, {{ $p.region }}</b></li>
+          <li><span>Nearest town</span><b>{{ $p.nearby }}</b></li>
+          <li><span>Exchanges</span><b>Not at this time</b></li>
+          <li><span>Residencies</span><b>Not at this time</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Passes ───────────────────────── -->
+  <section class="passes" id="passes">
+    <div class="wrap">
+      <div class="sechead" data-reveal>
+        <h2 class="h2">Passes</h2>
+        <p class="lede">Day, weekly, and monthly — all priced to be reachable.</p>
+      </div>
+
+      <div class="plans">
+        {{- range $p.passes }}
+        <article class="plan{{ if .featured }} plan--featured{{ end }}" data-reveal>
+          {{- if .featured }}<span class="plan__tag">Most popular</span>{{ end }}
+          <h3>{{ .name }}</h3>
+          <p class="plan__price">
+            <b>{{ .price }}</b><span>{{ .unit }}</span>
+          </p>
+          <p class="plan__note">{{ .note }}</p>
+          <p class="plan__detail">{{ .detail }}</p>
+        </article>
+        {{- end }}
+      </div>
+
+      <p class="passes__foot" data-reveal>
+        Ohana rates are for North Shore locals and returning friends.
+        Not sure which fits? <a href="mailto:{{ $p.emailPrimary }}">Just ask.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Gear ───────────────────────── -->
+  <section class="gear" id="gear">
+    <div class="wrap">
+      <div class="sechead" data-reveal>
+        <h2 class="h2">On the bench</h2>
+        <p class="lede">Modest and growing. Bring what you need, use what is here.</p>
+      </div>
+      <div class="gear__grid">
+        {{- range $p.equipment }}
+        <article class="gear__item" data-reveal>
+          <span class="gear__icon">{{ partial "icon.html" .icon }}</span>
+          <div>
+            <h3>{{ .name }}</h3>
+            <p>{{ .desc }}</p>
+          </div>
+        </article>
+        {{- end }}
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Contact ───────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="wrap contact__inner" data-reveal>
+      <h2 class="h2">Come build something</h2>
+      <p class="lede">
+        Tell us what you are working on and when you would like to come by.
+        We answer every email.
+      </p>
+      <div class="contact__btns">
+        <a class="btn" href="mailto:{{ $p.emailPrimary }}">
+          {{ partial "icon.html" "mail" }} {{ $p.emailPrimary }}
+        </a>
+        <a class="btn btn--ghost" href="mailto:{{ $p.emailAlt }}">{{ $p.emailAlt }}</a>
+      </div>
+      <p class="aloha">Aloha.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__wave" aria-hidden="true">{{ partial "swell.html" . }}</div>
+  <div class="wrap foot__inner">
+    <div class="foot__brand">
+      <span class="foot__mark">{{ partial "logo.html" . }}</span>
+      <div>
+        <b>North Shore Hackerspace</b>
+        <span>{{ $p.city }}, {{ $p.region }} · {{ $p.country }}</span>
+      </div>
+    </div>
+    <nav class="foot__links" aria-label="Footer">
+      <a href="mailto:{{ $p.emailPrimary }}">{{ $p.emailPrimary }}</a>
+      <a href="mailto:{{ $p.emailAlt }}">{{ $p.emailAlt }}</a>
+      <a href="{{ $p.wiki }}" target="_blank" rel="noopener">Hackerspaces Wiki</a>
+    </nav>
+  </div>
+  <p class="foot__copy">© {{ now.Year }} North Shore Hackerspace · Est. {{ $p.founded }}</p>
+</footer>
+
+<script src="/js/main.js" defer></script>
 </body>
 </html>

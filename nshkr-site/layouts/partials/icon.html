@@ -1,0 +1,53 @@
+{{- /* Line-art icon set. Usage: {{ partial "icon.html" "code" }} */ -}}
+{{- $n := . -}}
+<svg class="ico" viewBox="0 0 48 48" fill="none" aria-hidden="true"
+     stroke="currentColor" stroke-width="2"
+     stroke-linecap="round" stroke-linejoin="round">
+{{- if eq $n "code" }}
+  <path d="M17 14 7 24l10 10"/>
+  <path d="M31 14l10 10-10 10"/>
+  <path d="M27 11 21 37"/>
+{{- else if eq $n "circuit" }}
+  <circle cx="24" cy="24" r="4"/>
+  <circle cx="10" cy="10" r="3"/>
+  <circle cx="38" cy="10" r="3"/>
+  <circle cx="10" cy="38" r="3"/>
+  <circle cx="38" cy="38" r="3"/>
+  <path d="M12.5 12.5 21 21M35.5 12.5 27 21M12.5 35.5 21 27M35.5 35.5 27 27"/>
+{{- else if eq $n "surf" }}
+  <circle cx="33" cy="13" r="6"/>
+  <path d="M4 28c4.5-3.4 9-3.4 13.5 0s9 3.4 13.5 0 9-3.4 13.5 0"/>
+  <path d="M4 36c4.5-3.4 9-3.4 13.5 0s9 3.4 13.5 0 9-3.4 13.5 0"/>
+  <path d="M4 44c4.5-3.4 9-3.4 13.5 0s9 3.4 13.5 0 9-3.4 13.5 0" opacity="0.5"/>
+{{- else if eq $n "clock" }}
+  <circle cx="24" cy="24" r="17"/>
+  <path d="M24 13v11l7 5"/>
+{{- else if eq $n "pin" }}
+  <path d="M24 43s14-12 14-23a14 14 0 1 0-28 0c0 11 14 23 14 23Z"/>
+  <circle cx="24" cy="20" r="5"/>
+{{- else if eq $n "soldering-iron" }}
+  <path d="M41 7 25 23"/>
+  <path d="m27 17 4 4-6 6-4-4z"/>
+  <path d="m21 23-9 9a4 4 0 0 0 0 6 4 4 0 0 0 6 0l9-9"/>
+  <path d="M9 41c3-2 5-4 6-7"/>
+{{- else if eq $n "radio" }}
+  <rect x="6" y="22" width="36" height="19" rx="3"/>
+  <circle cx="16" cy="31.5" r="4"/>
+  <path d="M28 28h9M28 35h9"/>
+  <path d="M32 22 39 8"/>
+  <path d="M25 15a13 13 0 0 1 9 4M22 9a20 20 0 0 1 14 6"/>
+{{- else if eq $n "calendar" }}
+  <rect x="7" y="11" width="34" height="30" rx="3"/>
+  <path d="M7 20h34M17 7v8M31 7v8"/>
+{{- else if eq $n "users" }}
+  <circle cx="19" cy="18" r="7"/>
+  <path d="M7 40c0-6.6 5.4-11 12-11s12 4.4 12 11"/>
+  <path d="M33 12a7 7 0 0 1 0 13M35 29c4.4 1.4 7 4.9 7 9.5"/>
+{{- else if eq $n "ruler" }}
+  <rect x="4" y="17" width="40" height="14" rx="2"/>
+  <path d="M12 17v6M20 17v9M28 17v6M36 17v9"/>
+{{- else if eq $n "mail" }}
+  <rect x="5" y="11" width="38" height="26" rx="3"/>
+  <path d="m5 15 19 12 19-12"/>
+{{- end }}
+</svg>

@@ -1,0 +1,50 @@
+{{- $p := .Site.Params -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ .Site.Title }} — Hackerspace in Waialua, Hawaii</title>
+<meta name="description" content="{{ $p.description }}">
+<meta name="theme-color" content="#05101f">
+<link rel="canonical" href="{{ .Permalink }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ .Site.Title }} — {{ $p.tagline }}">
+<meta property="og:description" content="{{ $p.description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Site.Title }}">
+<meta name="twitter:description" content="{{ $p.description }}">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/css/style.css">
+
+<script type="application/ld+json">
+{{- $ld := dict
+  "@context" "https://schema.org"
+  "@type" "Organization"
+  "additionalType" "https://schema.org/Place"
+  "name" .Site.Title
+  "alternateName" $p.shortName
+  "url" .Permalink
+  "description" $p.description
+  "foundingDate" $p.foundedISO
+  "email" (lower $p.emailPrimary)
+  "sameAs" (slice $p.wiki)
+  "address" (dict
+    "@type" "PostalAddress"
+    "addressLocality" $p.city
+    "addressRegion" $p.regionCode
+    "addressCountry" "US")
+  "geo" (dict
+    "@type" "GeoCoordinates"
+    "latitude" $p.latitude
+    "longitude" $p.longitude)
+  "openingHoursSpecification" (dict
+    "@type" "OpeningHoursSpecification"
+    "dayOfWeek" (slice "Monday" "Tuesday" "Wednesday" "Thursday" "Friday" "Saturday" "Sunday")
+    "opens" $p.hours.openISO
+    "closes" $p.hours.closeISO)
+-}}
+{{ $ld | jsonify (dict "indent" "  ") | safeJS }}
+</script>

@@ -1,7 +1,86 @@
-baseURL = 'https://nshkr-space.github.io/site/'
+baseURL = 'https://nshkr.space/'
 languageCode = 'en-us'
 title = 'North Shore Hackerspace'
+enableRobotsTXT = true
 
 [taxonomies]
-  tag = ""
-  category = ""
+
+[params]
+  shortName    = 'NSHkr'
+  tagline      = 'Where technology meets the waves'
+  description  = 'A genuine hackerspace on the North Shore of Oahu. A dedicated room in Waialua, next to Haleiwa Town. Open daily 9AM-6PM. Day, weekly, and monthly passes available.'
+  founded      = 'March 5, 2023'
+  foundedISO   = '2023-03-05'
+  status       = 'Active'
+  members      = '2'
+  roomSize     = '18 ft x 24 ft'
+  city         = 'Waialua'
+  nearby       = 'Haleiwa Town'
+  region       = 'Hawaii'
+  regionCode   = 'HI'
+  country      = 'United States of America'
+  latitude     = '21.573167'
+  longitude    = '-158.122837'
+  emailPrimary = 'Hello@NSHkr.com'
+  emailAlt     = 'Hello@NSHkr.Space'
+  wiki         = 'https://wiki.hackerspaces.org/NSHkr'
+
+[params.hours]
+  open     = '9:00 AM'
+  close    = '6:00 PM'
+  days     = 'Daily'
+  openISO  = '09:00'
+  closeISO = '18:00'
+  note     = 'Outside these hours by arrangement — just email us.'
+
+[[params.passes]]
+  name     = 'Daily'
+  price    = '$30'
+  unit     = '/ day'
+  note     = 'Visitor rate'
+  detail   = '$20 / day for Ohana — North Shore locals and returning friends.'
+  featured = false
+
+[[params.passes]]
+  name     = 'One Day a Week'
+  price    = '$60'
+  unit     = '/ month'
+  note     = 'Same day each week'
+  detail   = 'Pick your day and make it a habit. Good for a standing project night.'
+  featured = true
+
+[[params.passes]]
+  name     = 'Monthly'
+  price    = '$300'
+  unit     = '/ month'
+  note     = 'Full access'
+  detail   = '$220 / month on a two-month minimum. The best rate for sustained work.'
+  featured = false
+
+[[params.equipment]]
+  name = 'Soldering Iron'
+  desc = 'A proper bench for electronics work, repairs, and prototyping.'
+  icon = 'soldering-iron'
+
+[[params.equipment]]
+  name = 'Amateur Radio Station'
+  desc = 'Bring your callsign — or come get curious about getting one.'
+  icon = 'radio'
+
+[[params.values]]
+  title = 'Create'
+  icon  = 'code'
+  body  = 'Bring the half-finished thing. Firmware that will not flash, a board that needs reflowing, a model that will not converge. Bench space, quiet, and room to think it through.'
+
+[[params.values]]
+  title = 'Connect'
+  icon  = 'circuit'
+  body  = 'Makers, developers, radio operators, and tinkerers who actually live and work out here. Small enough that you will know everyone — which is the point.'
+
+[[params.values]]
+  title = 'Balance'
+  icon  = 'surf'
+  body  = 'Island hours by design. Get deep into something hard in the morning and still make the water before the light goes. That is not a perk, it is the whole idea.'
+
+[markup.goldmark.renderer]
+  unsafe = true

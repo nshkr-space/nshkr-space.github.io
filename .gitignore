@@ -1,0 +1,10 @@
+# Hugo build artifacts
+.hugo_build.lock
+nshkr-site/.hugo_build.lock
+nshkr-site/resources/_gen/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
